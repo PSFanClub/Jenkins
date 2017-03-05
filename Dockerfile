@@ -5,7 +5,8 @@ RUN apt-get update
 
 # Install Jade-Lang CLI to allow .jade file compiling
 RUN apt-get install -y npm \
- && npm install jade -g \
+ && npm install pug -g \
+ && npm install pug-cli -g \
  && ln -s /usr/bin/nodejs /usr/bin/node
 
 # Install Sass-Lang CLI to allow .sass file compiling
