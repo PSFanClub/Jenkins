@@ -10,8 +10,11 @@ RUN apt-get install -y npm \
  && ln -s /usr/bin/nodejs /usr/bin/node
 
 # Install Sass-Lang CLI to allow .sass file compiling
+# Install Jekyll for static site generation
 RUN apt-get install -y rubygems \
- && gem install sass
+ && apt-get install -y ruby-dev \
+ && gem install sass \
+ && gem install jekyll
 
 # Install Docker to allow image building
 RUN apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D \
